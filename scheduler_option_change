@@ -1,0 +1,15 @@
+@startuml
+title Scheduler option change
+
+Scheduler -> Scheduler : Change option
+activate Scheduler
+Scheduler -> Workspace : Change option
+
+Workspace -> Workspace : Re-render\n(in case of option)
+activate Workspace
+Workspace --> Scheduler : Deferred ready
+Scheduler -> Appointments : Re-render
+deactivate Workspace
+deactivate Scheduler
+
+@enduml

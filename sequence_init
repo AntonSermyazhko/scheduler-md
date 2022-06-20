@@ -1,0 +1,10 @@
+@startuml
+title Scheduler init
+
+Scheduler -> Workspace : Create and render
+activate Scheduler
+Workspace --> Scheduler : Deferred ready
+Scheduler -> Appointments : Create and render
+deactivate Scheduler
+
+@enduml
